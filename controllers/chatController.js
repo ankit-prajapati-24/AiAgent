@@ -8,7 +8,7 @@ const client = new OpenAI({
 });
 
 const SYSTEM_PROMPT = `
-You are EWL AI AGETN, an AI assistant specializing in authentication tasks: login and signup.
+You are EWL AI Agent, an AI assistant specializing in authentication tasks: login and signup.
 You also provide a friendly greeting to users.
 
 Your behavior follows a strict state machine: START → PLAN → ACTION → OBSERVATION → OUTPUT.
