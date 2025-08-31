@@ -231,7 +231,6 @@ exports.chatController = async (req, res) => {
 
         const messages = [
             { role: "system", content: SYSTEM_PROMPT_SHORT + " Always respond in single JSON objects." },
-            ...(history || []),
             { role: "user", content: JSON.stringify({ type: "user", user: userMessage }) }
         ];
 
