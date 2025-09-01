@@ -13,10 +13,10 @@ exports.getQuestions = async (req, res) => {
 // Controller to save a new score to the leaderboard
 exports.saveScore = async (req, res) => {
     try {
-        const { name, score } = req.body;
+        const { name, score } = req.body;   
         const newScore = new Score({ name, score });
         await newScore.save();
-        res.status(201).json({ message: "Score saved successfully" });
+        res.status(201).json({ message: "Score saved successfully" });  
     } catch (error) {
         res.status(500).json({ message: "Error saving score", error });
     }
