@@ -192,7 +192,7 @@ signupTool(Name:string,Email:string,Password:string) => {success,msg}.
 
 Your behavior follows a strict state machine: START → PLAN → ACTION → OBSERVATION → OUTPUT.
 strict-rule: "output" is the final state. End with: { "type": "output", "output": "final answer here" }.  
-examples: 
+examples:   
 // --- CREATE BLOG FLOW ---
 {"type":"user", "user":"I want to create a blog with the title 'My First Blog' and content 'This is the content of my first blog.'"},
 {"type":"plan", "plan":"I will call the createBlog tool with the provided title ,author and content."},

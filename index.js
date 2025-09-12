@@ -9,6 +9,7 @@ const Authrouter = require("./routes/Auth");
 const blogRoutes = require("./routes/BlogRoutes");
 const chatRoutes = require("./routes/chat");
 const quizRoutes = require("./routes/quize");
+const stackFlowRoutes = require("./routes/stackFlowRoutes")
 const dotenv = require("dotenv");
 dotenv.config(); // Load environment variables from .env file
 const PORT = process.env.PORT || 4000;
@@ -33,6 +34,7 @@ app.use("/api/v1/Auth",Authrouter);
 app.use("/api/v1/blog",blogRoutes);
 app.use("/api/v1/AiAgent",chatRoutes);
 app.use("/api/v1/quiz",quizRoutes);
+app.use("/api/v1/stackFlowRoutes",stackFlowRoutes);
 app.get("/", (req, res) => {
   res.json({
     message: "Your server is running"
