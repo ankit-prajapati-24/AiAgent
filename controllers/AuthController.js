@@ -9,7 +9,7 @@ exports.Signup = async (req, res) => {
     try {
         console.log(req.body);
         const { Email, Password, Name } = req.body;
-        console.log(req.body, "this is give data");
+        console.log(req.body, "request data here ");
         if (!Email || !Password || !Name) {
             return res.status(200).json({
                 success: false,
@@ -58,6 +58,7 @@ exports.Signup = async (req, res) => {
 
 exports.Login = async (req, res) => {
     try {
+        console.log(req.body, "request data here ");
         const { Email, Password } = req.body;           
         if (!Email || !Password) {
             return res.status(200).json({
