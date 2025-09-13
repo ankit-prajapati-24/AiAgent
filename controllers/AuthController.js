@@ -10,6 +10,20 @@ exports.Signup = async (req, res) => {
         console.log(req.body);
         const { Email, Password, Name } = req.body;
         console.log(req.body, "this is give data");
+        if (!Email || !Password || !Name) {
+            return res.status(200).json({
+                success: false,
+                msg: "please provide all the fields and check the spelling"
+            });
+        }
+        //check for empty fields
+        if (Email.trim() === "" || Password.trim() === "" || Name.trim() === "") {
+            return res.status(200).json({
+                success: false,
+                msg: "please fill all the fields"
+            });
+        }
+
         const user = await User.findOne({ Email });
         if (user) {
             return res.status(200).json({
@@ -44,7 +58,22 @@ exports.Signup = async (req, res) => {
 
 exports.Login = async (req, res) => {
     try {
-        const { Email, Password } = req.body;
+        const { Email, Password } = req.body;           
+        if (!Email || !Password) {
+            return res.status(200).json({
+                success: false,
+                msg: "please provide all the fields and check the spelling"
+            });
+        }
+        //check for empty fields
+        if (Email.trim() === "" || Password.trim() === "") {
+            return res.status(200).json({
+                success: false,
+                msg: "please fill all the fields"
+            });
+        }
+
+
         const user = await User.findOne({ Email });
         if (!user) {
             return res.status(200).json({
